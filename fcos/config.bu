@@ -7,6 +7,27 @@ passwd:
         - docker
       ssh_authorized_keys:
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCqRRLLldAbLLbFq9k/6dDXSAPgvKTVJuZOEBCf6X8Vgi0/+6twfkM6oVGzcq3FajLHdyFFaQAYdfce5DcLQi6Tt4kiNm+jZH4f+D6166q/8pnHKY5zQfAqbGCUldkZiGUBPHoqqenDUBEhDvVbGJPo2gh3VbEr+w4kMQDzoCCW+HRphLwEEOwikE7Ls54vDw9iNLmoqUTcOeuOAVs3ui0TTbVTXcvfpga7cH6SJssgeBLeMtkpcbIilXX75qHIvJHCE6qOQWLvA1cdH9nqsjzYii/ydzQpTQydRtFDP12nGrD8W77O+/WkXsXp7R0+7QQoV1OAzzEaMRqA0QIypK2LvloaFow2he6j9H9o/+vQ3qU33/5JdhvpN+BjabByh9QQkW0eei6I1AfzCQ8entpxwUBwaGHOseIARBiT31sTdh06n/hSElysUM7V57rPwq9x4zsSV4C5FAruoCEJYFRW+qJ1UySXcPuKI62eQ0+s82JudF0nwCFGSBMcRUksb3U= mafuyu@natura
+storage:
+  files:
+    - path: /opt/portainer/docker-compose.yml
+      mode: 493 #755
+      contents:
+        inline: |-
+          version: '2'
+          services:
+            portainer:
+              image: portainer/portainer
+              volumes:
+                - '/opt/portainer:/data'
+                - '/var/run/docker.sock:/var/run/docker.sock'
+              ports:
+                - 9000:9000
+              command:
+                - --no-analytics
+                - --host=unix:///var/run/docker.sock
+  directories:
+    - path: /opt/portainer
+      mode: 493 #755
 systemd:
   units:
     - name: rpm-ostree-install-docker-compose.service

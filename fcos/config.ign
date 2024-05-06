@@ -15,6 +15,24 @@
       }
     ]
   },
+  "storage": {
+    "directories": [
+      {
+        "path": "/opt/portainer",
+        "mode": 493
+      }
+    ],
+    "files": [
+      {
+        "path": "/opt/portainer/docker-compose.yml",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/2yNMQ7DIAxF95yCjYk66lZLPYxFUIsS7MgQ1N6+IpEahniw7Pf9v2vQHIXR2LsdctAafcg4GLOKFooctC3GxESvgCeF/7TLVZYtHcZWzliQtZxHCBMVsp1cSUE3hkn8HPSWxc94BQ9PC+rSH+M4Yms78ZIS8XTKzrE4Ylq+Jfrc4bfk8tw4fhDg6tkvAAD//6uhQXAOAQAA"
+        },
+        "mode": 493
+      }
+    ]
+  },
   "systemd": {
     "units": [
       {

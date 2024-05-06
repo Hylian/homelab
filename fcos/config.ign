@@ -1,10 +1,5 @@
 {
   "ignition": {
-    "config": {
-      "replace": {
-        "source": "https://raw.githubusercontent.com/Hylian/homelab/main/fcos/config.ign"
-      }
-    },
     "version": "3.4.0"
   },
   "passwd": {

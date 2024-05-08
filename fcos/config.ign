@@ -24,6 +24,10 @@
       {
         "path": "/opt/homelab/portainer",
         "mode": 493
+      },
+      {
+        "path": "/opt/homelab/systemd/portainer",
+        "mode": 493
       }
     ],
     "files": [

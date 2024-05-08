@@ -30,6 +30,8 @@ storage:
       mode: 493 #755
     - path: /opt/homelab/portainer
       mode: 493 #755
+    - path: /opt/homelab/systemd/portainer
+      mode: 493 #755
 systemd:
   units:
     - name: rpm-ostree-install-docker-compose.service

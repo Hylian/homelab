@@ -1,6 +1,0 @@
-variant: fcos
-version: 1.5.0
-ignition:
-  config:
-    replace:
-      source: https://raw.githubusercontent.com/Hylian/homelab/main/fcos/config.ign

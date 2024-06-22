@@ -1,0 +1,1 @@
+sudo coreos-installer install /dev/vda --ignition-url https://raw.githubusercontent.com/Hylian/homelab/main/fcos/config.ign

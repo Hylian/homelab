@@ -43,7 +43,7 @@
         "path": "/opt/homelab/systemd/traefik/docker-compose.yml",
         "contents": {
           "compression": "gzip",
-          "source": "data:;base64,H4sIAAAAAAAC/5RTwW7bOhC8+ysIv0MSPIhyYx0MAboULdCeWrgueg0ljW3CFFdYrmQbRf+9kKXETJMG6E07O8sZLYc9OFjyubq5v5kFcG8rhHymlLDB1h6GT6VsY3bIn7D+Xi8ueEssYaQo9Z/a7KE+bTZfL/iEJmq+WuSrxfwF69sftCxb5lm2fE78gVJ9/6xu4U3pUKvyrJLEtFZbH1B1jEK4w10sdpF7FOzJdQ2ePCZqnvaGU+58WlN1AOtA1SF/FWSaR2PUSrqnBs6U6bSI1EECfMXnVvK4GOcqahrj66v2K86jXsvU2xoc9GjijZbGqaWA+v35A7amc1JsjQtvHaY95Eh8KCbrERVe+NyS9RL0EaU2dc0IochXi7+zxl+4crNsGZETRzvt0MMVH9frL+vrGid5vRdpNVMng8WhSCoj1d44p7lzKPYUhLHDqb19+DkUuf7/18Pd/J9OijwXR5TRcJIMWQcHYePDkEO9JT4arq3fiW1AnQRta4eKvJ+A4t0UKmdKuChTj1bGkF7vddr5S+Ys7jx7aTgJ2Bs3PLYOvwMAAP//5Y5n854DAAA="
+          "source": "data:;base64,H4sIAAAAAAAC/5RTsW7bMBDd/RWEOyRBIcqNNRgCtBQd2q1AXXQNJT1bhCmecDzJNor+eyFLiZkmDZBN9+4d39PxcQAHSz5XN/c3iwAebIWQL5QSNtjZw/iplG3NHvkTNtzr1QXviCVMFKU+qG0D9XW7/X7BZzRRy80q36yWL1g//qFl2TrPsvVz4i+U6uc3dQtvSodalWeVJKaz2vqAqmcUwj3uYrGL3KPgQK5v8eQxUct0MJxy79OaqgNYB6oO+asg0zIao07Shlo4U6bzIlIHCfAVnzvJ42Kaq6htja+v2q84j3od02BrcNCTiTdaGqeOAurP5y/Ymd5JsTMuvHWY9pAj8aGYrUdUeOFzR9ZL0EeU2tQ1I4Qi36z+z5p+4crNsvV1V7OGbkQ6zdTL6GMskspI1RjnNPcORUNBGHucutuH32OR649/Hu6W7zopMlYcUUbDSTIGGhyEjQ9j2PSO+Gi4tn4vtgX1ErStHSryfgaKT3NynCnhouA8WpmSeL28ebEvmYu48+w54SRgb9z4onr8DQAA//8QB4cigwMAAA=="
         },
         "mode": 493
       }

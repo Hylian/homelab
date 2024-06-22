@@ -22,13 +22,51 @@ storage:
                 - '/var/run/docker.sock:/var/run/docker.sock'
               ports:
                 - 9000:9000
+              labels:
+                - 'traefik.enable=true'
+                - 'traefik.http.services.portainer.loadbalancer.server.port=9000'
               command:
                 - --no-analytics
                 - --host=unix:///var/run/docker.sock
+    - path: "/opt/homelab/systemd/traefik/docker-compose.yml"
+      mode: 493 #755
+      contents:
+        inline: |-
+          version: '2'
+          services:
+            traefik:
+              image: traefik:v2.0
+              ports:
+                # The HTTP port
+                - "80:80"
+                # The HTTPS port
+                - "443:443"
+                # The Web UI (enabled by --api.insecure=true)
+                - "8080:8080"
+              volumes:
+                - "/var/run/docker.sock:/var/run/docker.sock:ro"
+                - "/opt/homelab/traefik/letsencrypt:/letsencrypt"
+              command:
+                - --api.insecure=true
+                - --providers.docker
+                - --providers.docker.exposedByDefault=false
+                - --providers.docker.network=traefik
+                - --entrypoints.web.address=:80
+                - --entrypoints.websecure.address=:443
+                - "--serverstransport.forwardingtimeouts.idleconntimeout=10"
+              labels:
+                - traefik.enable=true
+              networks:
+                - traefik
+          networks:
+            traefik:
+              external: true
   directories:
     - path: /opt/homelab/systemd
       mode: 493 #755
     - path: /opt/homelab/systemd/portainer
+      mode: 493 #755
+    - path: /opt/homelab/systemd/traefik
       mode: 493 #755
 systemd:
   units:
@@ -70,6 +108,28 @@ systemd:
         TimeoutStartSec=0
         Restart=always
         WorkingDirectory=/opt/homelab/systemd/portainer/
+        ExecStartPre=-/usr/bin/docker-compose down -v
+        ExecStartPre=-/usr/bin/docker-compose rm -v
+        ExecStartPre=-/usr/bin/docker-compose pull
+        ExecStart=/usr/bin/docker-compose up
+        ExecStop=/usr/bin/docker-compose down -v
+
+        [Install]
+        WantedBy=multi-user.target
+        WantedBy=docker.service
+    - name: traefik.service
+      enabled: true
+      contents: |-
+        [Unit]
+        Description=Traefik Router Container
+        After=docker.service
+        Requires=docker.service
+
+        [Service]
+        Restart=always
+        TimeoutStartSec=0
+        Restart=always
+        WorkingDirectory=/opt/homelab/systemd/traefik/
         ExecStartPre=-/usr/bin/docker-compose down -v
         ExecStartPre=-/usr/bin/docker-compose rm -v
         ExecStartPre=-/usr/bin/docker-compose pull

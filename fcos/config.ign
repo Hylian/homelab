@@ -24,6 +24,10 @@
       {
         "path": "/opt/homelab/systemd/portainer",
         "mode": 493
+      },
+      {
+        "path": "/opt/homelab/systemd/traefik",
+        "mode": 493
       }
     ],
     "files": [
@@ -31,7 +35,15 @@
         "path": "/opt/homelab/systemd/portainer/docker-compose.yml",
         "contents": {
           "compression": "gzip",
-          "source": "data:;base64,H4sIAAAAAAAC/2yNMQ7DIAxF95yCjYk66lZLPYxFUIsS7MgQ1N6+IpEahniw7Pf9v2vQHIXR2LsdctAafcg4GLOKFooctC3GxESvgCeF/7TLVZYtHcZWzliQtZxHCBMVsp1cSUE3hkn8HPSWxc94BQ9PC+rSH+M4Yms78ZIS8XTKzrE4Ylq+Jfrc4bfk8tw4fhDg6tkvAAD//6uhQXAOAQAA"
+          "source": "data:;base64,H4sIAAAAAAAC/2yPQW7EIAxF93MKdqwCUXdFymEc4nZQiB0ZB7W3r0jUSaQJCwT/2f/bFaUkpmDsh30UlJoilvAwZmVRSITSPsakBb4xnKp/vXZcOW/L0dhOZ6znVc+i4CdQsBdcQbxs5CeOM4orHOdwJx49zeji/tn3fWjXrmQYMV+zVQC/0uyQYMw4qGxo3+lTdXX/K7vXqC4zTCNkoNhGQKkoOx1a4OETeVmApjOy64g7IMi/mmK5yE8uOmyUfoL3d+v9BQAA//86NuL3gAEAAA=="
+        },
+        "mode": 493
+      },
+      {
+        "path": "/opt/homelab/systemd/traefik/docker-compose.yml",
+        "contents": {
+          "compression": "gzip",
+          "source": "data:;base64,H4sIAAAAAAAC/3ySQW+cMBCF7/srrO0h7QGzzXJYWeJS9dDeKnWrng1+m1gYD5oxbPj3FQsNpElzgzefPc8zbwCLp2jU3f3dTsCDryFmp1Rii4tvpk+lfGsfYJ614V4fbnpHnGRGlPqgzo9Q387nHzd9UTO1Px3M6bB/Rf38ByuKoymK40vwNyr167v6iGirAKeqUWWZ7bz2UVD3jDJxj0/bZrd2fxsOFPoWzx4ztc8Hyzn3MXdUN2AtVDfmTZFpvzlGXcofqUWwVb4MIg9Igljz2CWz/ZnP1dS2Nrq19xvON7WOafAOLHo28U5J46kjgfsyfsXF9iGVFxvkvct0RLoSN+VifYMiJh478jGJvqLS1jmGSGlOh/9T8xNWtiiO66yybEoSWBLbKNOW9YX4atn5+JB8C+qTaO8CaopxEcrPy8qCrRA2G1sc6zkC69SWF70md9vKixzjKYGjDVOUe/wJAAD//yeMCQn8AgAA"
         },
         "mode": 493
       }
@@ -48,6 +60,11 @@
         "contents": "[Unit]\nDescription=Portainer Admin Container\nAfter=docker.service\nRequires=docker.service\n\n[Service]\nRestart=always\nTimeoutStartSec=0\nRestart=always\nWorkingDirectory=/opt/homelab/systemd/portainer/\nExecStartPre=-/usr/bin/docker-compose down -v\nExecStartPre=-/usr/bin/docker-compose rm -v\nExecStartPre=-/usr/bin/docker-compose pull\nExecStart=/usr/bin/docker-compose up\nExecStop=/usr/bin/docker-compose down -v\n\n[Install]\nWantedBy=multi-user.target\nWantedBy=docker.service",
         "enabled": true,
         "name": "portainer.service"
+      },
+      {
+        "contents": "[Unit]\nDescription=Traefik Router Container\nAfter=docker.service\nRequires=docker.service\n\n[Service]\nRestart=always\nTimeoutStartSec=0\nRestart=always\nWorkingDirectory=/opt/homelab/systemd/traefik/\nExecStartPre=-/usr/bin/docker-compose down -v\nExecStartPre=-/usr/bin/docker-compose rm -v\nExecStartPre=-/usr/bin/docker-compose pull\nExecStart=/usr/bin/docker-compose up\nExecStop=/usr/bin/docker-compose down -v\n\n[Install]\nWantedBy=multi-user.target\nWantedBy=docker.service",
+        "enabled": true,
+        "name": "traefik.service"
       }
     ]
   }

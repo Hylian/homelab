@@ -24,7 +24,11 @@ storage:
                 - 9000:9000
               labels:
                 - 'traefik.enable=true'
+                - "traefik.http.routers.frontend.entrypoints=web"
                 - 'traefik.http.services.portainer.loadbalancer.server.port=9000'
+                - "traefik.http.routers.edge.entrypoints=web"
+                - "traefik.http.services.edge.loadbalancer.server.port=8000"
+                - "traefik.http.routers.edge.service=edge"
               command:
                 - --no-analytics
                 - --host=unix:///var/run/docker.sock
@@ -53,6 +57,9 @@ storage:
                 - --providers.docker.network=traefik
                 - --entrypoints.web.address=:80
                 - --entrypoints.websecure.address=:443
+                - ---log.level=ERROR
+                - "traefik.http.routers.http-catchall.rule=hostregexp(`{host:.+}`)"
+                - "traefik.http.routers.http-catchall.entrypoints=web"
                 - "--serverstransport.forwardingtimeouts.idleconntimeout=10"
               labels:
                 - traefik.enable=true

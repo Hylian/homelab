@@ -35,7 +35,7 @@
         "path": "/opt/homelab/systemd/portainer/docker-compose.yml",
         "contents": {
           "compression": "gzip",
-          "source": "data:;base64,H4sIAAAAAAAC/2yPQW7EIAxF93MKdqwCUXdFymEc4nZQiB0ZB7W3r0jUSaQJCwT/2f/bFaUkpmDsh30UlJoilvAwZmVRSITSPsakBb4xnKp/vXZcOW/L0dhOZ6znVc+i4CdQsBdcQbxs5CeOM4orHOdwJx49zeji/tn3fWjXrmQYMV+zVQC/0uyQYMw4qGxo3+lTdXX/K7vXqC4zTCNkoNhGQKkoOx1a4OETeVmApjOy64g7IMi/mmK5yE8uOmyUfoL3d+v9BQAA//86NuL3gAEAAA=="
+          "source": "data:;base64,H4sIAAAAAAAC/4xRwW7DIAy99yuiXHIKRDttSPkYB9wWldiRcbL17yfStYm0VhsHhN/jvWfMgpIjk6uat+aQUZboMbtDVU0sCpFQSlFVcYQTug21j9NKL5zm8SYsq60ay5Nul5wNoNDs6AXEykw2sL+gmMz+4p6BN00x2rl/dF3nyrYiCQZM+2wVwGO8GCQYEvYqM27R9Z09q05GeFaUbI7CpEjBIKlcJ46kuf/Eof7tuuruozKPJ5rEEAZIQL60jrKgrGxfGv0rH8MJX2fXz7NX0cvY967r6v/E/vj1pbgJPI8jUNhG2rbELRCkq0afd/CZs/YzxS9n7bPv+w4AAP//CjnOnWACAAA="
         },
         "mode": 493
       },
@@ -43,7 +43,7 @@
         "path": "/opt/homelab/systemd/traefik/docker-compose.yml",
         "contents": {
           "compression": "gzip",
-          "source": "data:;base64,H4sIAAAAAAAC/3ySQW+cMBCF7/srrO0h7QGzzXJYWeJS9dDeKnWrng1+m1gYD5oxbPj3FQsNpElzgzefPc8zbwCLp2jU3f3dTsCDryFmp1Rii4tvpk+lfGsfYJ614V4fbnpHnGRGlPqgzo9Q387nHzd9UTO1Px3M6bB/Rf38ByuKoymK40vwNyr167v6iGirAKeqUWWZ7bz2UVD3jDJxj0/bZrd2fxsOFPoWzx4ztc8Hyzn3MXdUN2AtVDfmTZFpvzlGXcofqUWwVb4MIg9Igljz2CWz/ZnP1dS2Nrq19xvON7WOafAOLHo28U5J46kjgfsyfsXF9iGVFxvkvct0RLoSN+VifYMiJh478jGJvqLS1jmGSGlOh/9T8xNWtiiO66yybEoSWBLbKNOW9YX4atn5+JB8C+qTaO8CaopxEcrPy8qCrRA2G1sc6zkC69SWF70md9vKixzjKYGjDVOUe/wJAAD//yeMCQn8AgAA"
+          "source": "data:;base64,H4sIAAAAAAAC/5RTwW7bOhC8+ysIv0MSPIhyYx0MAboULdCeWrgueg0ljW3CFFdYrmQbRf+9kKXETJMG6E07O8sZLYc9OFjyubq5v5kFcG8rhHymlLDB1h6GT6VsY3bIn7D+Xi8ueEssYaQo9Z/a7KE+bTZfL/iEJmq+WuSrxfwF69sftCxb5lm2fE78gVJ9/6xu4U3pUKvyrJLEtFZbH1B1jEK4w10sdpF7FOzJdQ2ePCZqnvaGU+58WlN1AOtA1SF/FWSaR2PUSrqnBs6U6bSI1EECfMXnVvK4GOcqahrj66v2K86jXsvU2xoc9GjijZbGqaWA+v35A7amc1JsjQtvHaY95Eh8KCbrERVe+NyS9RL0EaU2dc0IochXi7+zxl+4crNsGZETRzvt0MMVH9frL+vrGid5vRdpNVMng8WhSCoj1d44p7lzKPYUhLHDqb19+DkUuf7/18Pd/J9OijwXR5TRcJIMWQcHYePDkEO9JT4arq3fiW1AnQRta4eKvJ+A4t0UKmdKuChTj1bGkF7vddr5S+Ys7jx7aTgJ2Bs3PLYOvwMAAP//5Y5n854DAAA="
         },
         "mode": 493
       }
